@@ -1,4 +1,4 @@
-![Bons Voyage cover - AI-generated promotional concept art](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-cover.png)
+![Bons Voyage cover - AI-generated promotional concept art](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-cover.png?banner=20261009)
 
 # Bons Voyage
 
