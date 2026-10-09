@@ -1,0 +1,1752 @@
+[
+  {
+    "id": "03",
+    "title": "The Caravan Court",
+    "name": "caravan_court",
+    "sid": "caravan_court_egyptian",
+    "theme": "egyptian",
+    "climate": "sand",
+    "size": [
+      29,
+      27
+    ],
+    "origin": [
+      0,
+      -4,
+      0
+    ],
+    "sha256": "ede886c7db907b5cc6edef7c63ef8efde36fc057607118c653b49abda0c2ca62",
+    "set": "grand_sandy",
+    "role": "focal",
+    "stone": [
+      14,
+      3,
+      12
+    ],
+    "seal": null,
+    "rooms": [
+      [
+        4,
+        -4,
+        16,
+        10,
+        0,
+        22
+      ]
+    ],
+    "secret_blocks": [
+      [
+        7,
+        2,
+        18
+      ]
+    ],
+    "hidden_route": null,
+    "pitch": "Four approaches meet at a dry central crossing between shallow water channels. The waystone occupies that crossing, surrounded by roofless caravan rooms and an uneven ring of shaded resting places."
+  },
+  {
+    "id": "12",
+    "title": "Court of the Open Threshold",
+    "name": "open_threshold_court",
+    "sid": "open_threshold_court_default",
+    "theme": "default",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "cf014bc8a40d867d88ac503a7111a469003b30bd7bb0eac3e6d41a64c15e4ce9",
+    "set": "grand_default",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Five broken bench sectors face the waystone in the middle of an open assembly court. The adjoining hall was sealed, but broad axial entrances still lead directly to the stone."
+  },
+  {
+    "id": "13",
+    "title": "The Apprentice Yard",
+    "name": "apprentice_yard",
+    "sid": "apprentice_yard_default",
+    "theme": "default",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "2c800694aac552232493a4ea603afd76221e48c06855eb72b301328fce17926d",
+    "set": "grand_default",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      12
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Trial arches and failed corner samples face a clear teaching court. The real waystone stands alone in its center: the working object the apprentices were trying to understand."
+  },
+  {
+    "id": "14",
+    "title": "The Dismantled Relay",
+    "name": "dismantled_relay",
+    "sid": "dismantled_relay_default",
+    "theme": "default",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      -10,
+      0
+    ],
+    "sha256": "bfe2f027cf4fb30d04b1f3ed5cf4454781962ebbb335576987a1bc372f60ae00",
+    "set": "grand_default",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      13
+    ],
+    "seal": [
+      12,
+      2,
+      7
+    ],
+    "rooms": [
+      [
+        7,
+        -9,
+        9,
+        17,
+        -3,
+        17
+      ]
+    ],
+    "secret_blocks": [
+      [
+        12,
+        2,
+        7
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        12,
+        2,
+        7
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        7,
+        -9,
+        9,
+        17,
+        -3,
+        17
+      ],
+      "route": [
+        [
+          12,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ]
+    },
+    "pitch": "Empty sockets, sorted masonry and a stripped service building suggest a relay deliberately taken apart. The surviving waystone was sealed below the dismantled works."
+  },
+  {
+    "id": "17",
+    "title": "Exchange of Names",
+    "name": "exchange_of_names",
+    "sid": "exchange_of_names_default",
+    "theme": "default",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      -10,
+      0
+    ],
+    "sha256": "fa2d9729dc45f94df5e1c118cf92bee29e7321195dd00ab9569c59d80ed3f71e",
+    "set": "grand_default",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      13
+    ],
+    "seal": [
+      12,
+      2,
+      19
+    ],
+    "rooms": [
+      [
+        6,
+        -9,
+        9,
+        18,
+        -3,
+        17
+      ]
+    ],
+    "secret_blocks": [
+      [
+        12,
+        2,
+        19
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        12,
+        2,
+        19
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        6,
+        -9,
+        9,
+        18,
+        -3,
+        17
+      ],
+      "route": [
+        [
+          12,
+          16
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ]
+    },
+    "pitch": "The visible counting court has rows of empty departure and return niches, but no functioning stone. The clerks concealed it below their rear office when the register ceased."
+  },
+  {
+    "id": "18",
+    "title": "The Flood Measure",
+    "name": "flood_measure",
+    "sid": "flood_measure_egyptian",
+    "theme": "egyptian",
+    "climate": "sand",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      1,
+      -14,
+      0
+    ],
+    "sha256": "fff3bf29111a800d50c997e87e2d826c9f7a08b709b9ced08e5fc3406698ba61",
+    "set": "grand_sandy",
+    "role": "hidden",
+    "stone": [
+      12,
+      -12,
+      15
+    ],
+    "seal": [
+      15,
+      -4,
+      15
+    ],
+    "rooms": [
+      [
+        7,
+        -13,
+        10,
+        17,
+        -7,
+        20
+      ]
+    ],
+    "secret_blocks": [
+      [
+        15,
+        -4,
+        15
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        15,
+        -4,
+        15
+      ],
+      "floor": -13,
+      "roof": -7,
+      "room": [
+        7,
+        -13,
+        10,
+        17,
+        -7,
+        20
+      ],
+      "route": [
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ]
+      ]
+    },
+    "pitch": "A deep graduated measuring shaft descends through bands of past floods. Below the lowest dry inspection landing, another sealed chamber protects the site's waystone."
+  },
+  {
+    "id": "22",
+    "title": "Granary of the Divided Harvest",
+    "name": "divided_harvest_granary",
+    "sid": "divided_harvest_granary_egyptian",
+    "theme": "egyptian",
+    "climate": "sand",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      -10,
+      0
+    ],
+    "sha256": "c09598a8b9d71a4400344ac38f534d0d0ab8c22510b792fdf22779fb758bab61",
+    "set": "grand_sandy",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      14
+    ],
+    "seal": [
+      17,
+      2,
+      19
+    ],
+    "rooms": [
+      [
+        7,
+        -9,
+        10,
+        17,
+        -3,
+        18
+      ]
+    ],
+    "secret_blocks": [
+      [
+        17,
+        2,
+        19
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        17,
+        2,
+        19
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        7,
+        -9,
+        10,
+        17,
+        -3,
+        18
+      ],
+      "route": [
+        [
+          17,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "pitch": "Four grain bins surround a communal weighing court. A breached rear bin hides the access to a sealed dispatch room below the granary."
+  },
+  {
+    "id": "25",
+    "title": "The Olive Press Terrace",
+    "name": "olive_press_terrace",
+    "sid": "olive_press_terrace_greek",
+    "theme": "greek",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      -10,
+      0
+    ],
+    "sha256": "acaf5db5fe845f6be9820e125a2396a7d1df3cb64935d1e043f9568d90966b3f",
+    "set": "grand_default",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      14
+    ],
+    "seal": [
+      7,
+      2,
+      16
+    ],
+    "rooms": [
+      [
+        6,
+        -9,
+        10,
+        18,
+        -3,
+        18
+      ]
+    ],
+    "secret_blocks": [
+      [
+        7,
+        2,
+        16
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        7,
+        2,
+        16
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        6,
+        -9,
+        10,
+        18,
+        -3,
+        18
+      ],
+      "route": [
+        [
+          7,
+          13
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          14
+        ]
+      ]
+    },
+    "pitch": "The olive press and settling basin remain practical farm buildings. The older waystone lies beneath the pressing room in a sealed foundation chamber reused by later keepers."
+  },
+  {
+    "id": "26",
+    "title": "The Salting Steps",
+    "name": "salting_steps",
+    "sid": "salting_steps_greek",
+    "theme": "greek",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "6bb4ea9ad15ca743a91d197196d2c40fdcf7b8d4a3a2cce340ba30b383508610",
+    "set": "grand_default",
+    "role": "focal",
+    "stone": [
+      12,
+      4,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Salting vats step down on both sides of a central dry terrace. The waystone occupies the middle landing, aligned with the working stair and the sea-facing approach."
+  },
+  {
+    "id": "29",
+    "title": "Court of the Cast Pebbles",
+    "name": "cast_pebbles_court",
+    "sid": "cast_pebbles_court_greek",
+    "theme": "greek",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "9fd0a070852e920aa69df3a27e511d883c7b9330b12abd5d6c8a6d9b4016f769",
+    "set": "grand_default",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Broken semicircular seating opens toward a waystone at the center of deliberation. Paired counting bowls sit behind the first bench, leaving the stone's approach broad and readable."
+  },
+  {
+    "id": "34",
+    "title": "Court of Equal Weights",
+    "name": "equal_weights_court",
+    "sid": "equal_weights_court_babylon",
+    "theme": "babylon",
+    "climate": "red",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      1
+    ],
+    "sha256": "b9ee6df05cfa529e1d69b1d4f5c82331352170d606bc424dbb37264b44047252",
+    "set": "grand_red",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Four weighing houses face a shared central waystone. Balance equipment sits in their bays, and their paving widths converge at the stone's bed."
+  },
+  {
+    "id": "39",
+    "title": "The Winter Assembly Bank",
+    "name": "winter_assembly_bank",
+    "sid": "winter_assembly_bank_viking",
+    "theme": "viking",
+    "climate": "snow",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      2,
+      0,
+      2
+    ],
+    "sha256": "59c21d5413a3605c81cad2bfca53c68b16aa9c4b155327a52fbfd3f13d104c0a",
+    "set": "grand_frozen",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      12
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Two crescent banks of assembly seating embrace the waystone at their center. The old fire pit sits beyond the speaking ground and the winter sky remains the only roof."
+  },
+  {
+    "id": "41",
+    "title": "The Bloomery Hollow",
+    "name": "bloomery_hollow",
+    "sid": "bloomery_hollow_viking",
+    "theme": "viking",
+    "climate": "snow",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      3,
+      -10,
+      5
+    ],
+    "sha256": "9bb099bc1cd43272444134eaa9c3af2e796c351112ef85698a510cef4f9236f5",
+    "set": "grand_frozen",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      14
+    ],
+    "seal": [
+      7,
+      2,
+      15
+    ],
+    "rooms": [
+      [
+        6,
+        -9,
+        10,
+        18,
+        -3,
+        18
+      ]
+    ],
+    "secret_blocks": [
+      [
+        7,
+        2,
+        15
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        7,
+        2,
+        15
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        6,
+        -9,
+        10,
+        18,
+        -3,
+        18
+      ],
+      "route": [
+        [
+          7,
+          12
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          16,
+          14
+        ]
+      ]
+    },
+    "pitch": "Collapsed furnaces, slag beds and windbreaks fill a secluded smithing hollow. The older waystone lies below a surviving furnace floor, in a room the later smiths carefully preserved."
+  },
+  {
+    "id": "51",
+    "title": "Court of the Rain Counters",
+    "name": "rain_counters_court",
+    "sid": "rain_counters_court_mayan",
+    "theme": "mayan",
+    "climate": "green",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "ce40414af4b66bf95650170ba87a0a6be4d00a288549fb100b4456501ddd9cc9",
+    "set": "grand_mossy",
+    "role": "focal",
+    "stone": [
+      12,
+      4,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Four rain basins face a dry central observation landing. The waystone occupies their meeting point, with broken sighting posts and measured channels leading the eye inward."
+  },
+  {
+    "id": "54",
+    "title": "The Ash Examination Court",
+    "name": "ash_examination_court",
+    "sid": "ash_examination_court_nether",
+    "theme": "nether",
+    "climate": "nether",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      3,
+      -10,
+      6
+    ],
+    "sha256": "11dba58f454d84daa61d5476700446d839924eea0cd5ca16de9ec95cb808362b",
+    "set": "nether",
+    "role": "hidden",
+    "stone": [
+      12,
+      -8,
+      14
+    ],
+    "seal": [
+      18,
+      2,
+      18
+    ],
+    "rooms": [
+      [
+        7,
+        -9,
+        9,
+        17,
+        -3,
+        19
+      ]
+    ],
+    "secret_blocks": [
+      [
+        18,
+        2,
+        18
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        18,
+        2,
+        18
+      ],
+      "floor": -9,
+      "roof": -3,
+      "room": [
+        7,
+        -9,
+        9,
+        17,
+        -3,
+        19
+      ],
+      "route": [
+        [
+          18,
+          15
+        ],
+        [
+          18,
+          16
+        ],
+        [
+          18,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          15
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          18,
+          15
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "pitch": "Two ash-inspection halls conceal a protected transfer chamber beneath their shared dividing wall. No working stone is displayed in the exposed examination yard."
+  },
+  {
+    "id": "58",
+    "title": "The Return Alignment Court",
+    "name": "return_alignment_court",
+    "sid": "return_alignment_court_end",
+    "theme": "end",
+    "climate": "end",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      4,
+      0,
+      2
+    ],
+    "sha256": "86d0f6bf0ee9b704dda827d00d232620dada02db9c96755d8c443ff82f85a203",
+    "set": "end",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      13
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Three surviving alignment frames converge on a waystone in the exact center of the court. Incomplete posts and open sky give the small stone a much larger field of significance."
+  },
+  {
+    "id": "60",
+    "title": "Court of the Empty Arrivals",
+    "name": "empty_arrivals_court",
+    "sid": "empty_arrivals_court_end",
+    "theme": "end",
+    "climate": "end",
+    "size": [
+      25,
+      25
+    ],
+    "origin": [
+      3,
+      0,
+      2
+    ],
+    "sha256": "c6e9e1c1cda0793a16a7accfd3ff40fc67c8b820614dd2edfaa16d81a4d082c4",
+    "set": "end",
+    "role": "focal",
+    "stone": [
+      12,
+      3,
+      14
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Rows of empty waiting benches and return niches face a central waystone. The open arrival court is generous; its missing occupants are the unsettling detail."
+  },
+  {
+    "id": "62",
+    "title": "Sanctuary of the Unroofed Sky",
+    "name": "unroofed_sky_sanctuary",
+    "sid": "unroofed_sky_sanctuary_greek",
+    "theme": "greek",
+    "climate": "green",
+    "size": [
+      49,
+      65
+    ],
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "sha256": "70fcee4b79d1c17a4294aad5ae56036e314c92fecfe88ab39aa4d81d47aee932",
+    "set": "mega_temperate",
+    "role": "focal",
+    "stone": [
+      24,
+      3,
+      32
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "A long roofless sanctuary has three aisles of unequal column remains, a broken rear apse and substantial enclosing foundations. Its waystone stands in the central crossing under open sky."
+  },
+  {
+    "id": "64",
+    "title": "Palace of the Buried Threshold",
+    "name": "buried_threshold_palace",
+    "sid": "buried_threshold_palace_egyptian",
+    "theme": "egyptian",
+    "climate": "sand",
+    "size": [
+      57,
+      57
+    ],
+    "origin": [
+      3,
+      -12,
+      0
+    ],
+    "sha256": "f437466b56e9cab7c12dede3eaf1ceeea36f9432afe1454b880373f86aa70e0b",
+    "set": "mega_sandy",
+    "role": "hidden",
+    "stone": [
+      28,
+      -10,
+      29
+    ],
+    "seal": [
+      14,
+      2,
+      39
+    ],
+    "rooms": [
+      [
+        21,
+        -11,
+        23,
+        35,
+        -5,
+        35
+      ],
+      [
+        11,
+        -11,
+        33,
+        17,
+        -5,
+        39
+      ]
+    ],
+    "secret_blocks": [
+      [
+        14,
+        2,
+        39
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        14,
+        2,
+        39
+      ],
+      "floor": -11,
+      "roof": -5,
+      "room": [
+        21,
+        -11,
+        23,
+        35,
+        -5,
+        35
+      ],
+      "route": [
+        [
+          14,
+          36
+        ],
+        [
+          14,
+          37
+        ],
+        [
+          14,
+          38
+        ],
+        [
+          14,
+          39
+        ],
+        [
+          14,
+          36
+        ],
+        [
+          15,
+          36
+        ],
+        [
+          16,
+          36
+        ],
+        [
+          17,
+          36
+        ],
+        [
+          18,
+          36
+        ],
+        [
+          19,
+          36
+        ],
+        [
+          20,
+          36
+        ],
+        [
+          21,
+          36
+        ],
+        [
+          22,
+          36
+        ],
+        [
+          23,
+          36
+        ],
+        [
+          23,
+          29
+        ],
+        [
+          23,
+          30
+        ],
+        [
+          23,
+          31
+        ],
+        [
+          23,
+          32
+        ],
+        [
+          23,
+          33
+        ],
+        [
+          23,
+          34
+        ],
+        [
+          23,
+          35
+        ],
+        [
+          23,
+          36
+        ],
+        [
+          23,
+          29
+        ],
+        [
+          24,
+          29
+        ],
+        [
+          25,
+          29
+        ],
+        [
+          26,
+          29
+        ]
+      ]
+    },
+    "pitch": "Two roofless palace courts, stores and a broken audience wall stand above a sealed transfer complex. The waystone occupies the concealed chamber beneath the inner court."
+  },
+  {
+    "id": "65",
+    "title": "Necropolis of the Interrupted Procession",
+    "name": "interrupted_procession_necropolis",
+    "sid": "interrupted_procession_necropolis_egyptian",
+    "theme": "egyptian",
+    "climate": "sand",
+    "size": [
+      49,
+      73
+    ],
+    "origin": [
+      0,
+      -12,
+      0
+    ],
+    "sha256": "8ce2824586d4c33ddb7751ce06221c21c8d19ba9b3bda01293ab8609a5956920",
+    "set": "mega_sandy",
+    "role": "hidden",
+    "stone": [
+      24,
+      -10,
+      42
+    ],
+    "seal": [
+      24,
+      2,
+      57
+    ],
+    "rooms": [
+      [
+        17,
+        -11,
+        36,
+        31,
+        -5,
+        48
+      ],
+      [
+        21,
+        -11,
+        51,
+        27,
+        -5,
+        57
+      ]
+    ],
+    "secret_blocks": [
+      [
+        24,
+        2,
+        57
+      ]
+    ],
+    "hidden_route": {
+      "seal": [
+        24,
+        2,
+        57
+      ],
+      "floor": -11,
+      "roof": -5,
+      "room": [
+        17,
+        -11,
+        36,
+        31,
+        -5,
+        48
+      ],
+      "route": [
+        [
+          24,
+          54
+        ],
+        [
+          24,
+          55
+        ],
+        [
+          24,
+          56
+        ],
+        [
+          24,
+          57
+        ],
+        [
+          19,
+          54
+        ],
+        [
+          20,
+          54
+        ],
+        [
+          21,
+          54
+        ],
+        [
+          22,
+          54
+        ],
+        [
+          23,
+          54
+        ],
+        [
+          24,
+          54
+        ],
+        [
+          19,
+          42
+        ],
+        [
+          19,
+          43
+        ],
+        [
+          19,
+          44
+        ],
+        [
+          19,
+          45
+        ],
+        [
+          19,
+          46
+        ],
+        [
+          19,
+          47
+        ],
+        [
+          19,
+          48
+        ],
+        [
+          19,
+          49
+        ],
+        [
+          19,
+          50
+        ],
+        [
+          19,
+          51
+        ],
+        [
+          19,
+          52
+        ],
+        [
+          19,
+          53
+        ],
+        [
+          19,
+          54
+        ],
+        [
+          19,
+          42
+        ],
+        [
+          20,
+          42
+        ],
+        [
+          21,
+          42
+        ],
+        [
+          22,
+          42
+        ]
+      ]
+    },
+    "pitch": "A long avenue passes unequal tomb enclosures and empty offering courts. Its terminal monument is roofless and apparently empty; the waystone lies deep beneath the processional axis."
+  },
+  {
+    "id": "78",
+    "title": "Basalt Transfer Citadel",
+    "name": "basalt_transfer_citadel",
+    "sid": "basalt_transfer_citadel_nether",
+    "theme": "nether",
+    "climate": "nether",
+    "size": [
+      65,
+      65
+    ],
+    "origin": [
+      3,
+      0,
+      2
+    ],
+    "sha256": "587efc4d49189768d5bca0116065cdc91d34b7f248107ba71eba380e49ebf836",
+    "set": "mega_nether",
+    "role": "focal",
+    "stone": [
+      32,
+      7,
+      32
+    ],
+    "seal": null,
+    "rooms": [],
+    "secret_blocks": [],
+    "hidden_route": null,
+    "pitch": "Four low bastion wings and blackstone causeways surround a broad transfer court above lava channels. The only waystone stands in the center on a restrained stone bed."
+  }
+]

@@ -1,0 +1,47 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="waystone_ruins"
+version="1.19.3"
+displayName="Bons Voyage"
+authors="BonsUnleashed"
+credits="Created by Justin (BonsUnleashed) with Claude and OpenAI Codex assistance. Requires Waystones, Balm and Lithostitched."
+description="Discover the ruins of the Waybuilders. Explore ancient temples, uncover hidden chambers, brush for relics, and build a network of working waystone destinations."
+logoFile="pack.png"
+
+[[dependencies.waystone_ruins]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.16,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.waystone_ruins]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.waystone_ruins]]
+modId="waystones"
+mandatory=true
+versionRange="[14.1.21,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.waystone_ruins]]
+modId="balm"
+mandatory=true
+versionRange="[7.3.44,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.waystone_ruins]]
+modId="lithostitched"
+mandatory=true
+versionRange="[1.4.11,)"
+ordering="AFTER"
+side="BOTH"
