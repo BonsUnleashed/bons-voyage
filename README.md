@@ -1,3 +1,5 @@
+![Bons Voyage cover - AI-generated promotional concept art](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-cover.png)
+
 # Bons Voyage
 
 **Discover the ruins. Reconnect the world.**
@@ -6,7 +8,7 @@ The Waybuilders are gone. Their waystones still work.
 
 ![A sandstone step pyramid on a beach at sunset, the sun behind its gateway and the waystone inside it](media/step-pyramid-sunset.webp)
 
-**[Download 1.19.3](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.19.3)** for Minecraft 1.20.1 Forge · [Changelog](CHANGELOG.md) · [Build from source](BUILDING.md) · [Watch the trailer](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-trailer.mp4) (70 s, in a 500-mod pack with shaders)
+**[Download 1.19.3](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.19.3)** for Minecraft 1.20.1 Forge · [Changelog](CHANGELOG.md) · [Build from source](BUILDING.md) · [Watch the trailer](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-trailer.mp4) (103 s, in a 500-mod pack with shaders)
 
 Requires Waystones, Balm and Lithostitched. Free, MIT licensed, client and server. Also on CurseForge and Modrinth.
 
@@ -16,6 +18,8 @@ waystone. Some stand in the open. Others wait behind sealed doors, under courtya
 on the sea floor, in the Nether and in the End.
 
 **Bring a brush. Look twice.**
+
+Get it: [GitHub](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.19.3) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bons-voyage) · [Modrinth](https://modrinth.com/mod/bons-voyage).
 
 ## What you will find
 
