@@ -508,6 +508,7 @@ SMUGGLERS_TALLY = written_book("Tally of the Undercroft", "The last tally-man", 
     "Goods come in by the cistern road and go out by night. Nobody has kept the watch above since its stone went quiet.",
     "The cells up front are for show. Brick up the east door again after every count.",
     "Last count: the strongbox full, the casks sealed. Whoever reads this, we did not come back for it.",
+    "For the next shelter, seek the long roof of turf. Its stores lie beneath the sleeping hall, not beyond the outer walls.",
 ])
 
 

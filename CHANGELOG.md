@@ -1,3 +1,18 @@
+# Bons Voyage 1.19.4
+
+- School-specific pottery keepsakes in curiosity caches, hidden treasuries and school-affiliated record caches. Existing treasury rewards are preserved, with one pottery keepsake added.
+- Three existing lore books now offer subtle clues to discoveries in other ruins.
+- Selected archive, storehouse, ceremonial and shelter archaeology sites have more appropriate common finds. Valuable-find probabilities are unchanged.
+- Ordinary discovery advancements still show personal notifications but no longer announce in chat. Challenge advancements retain both.
+
+Structure layouts, placement rules, generation frequency and dependencies are unchanged. New template details appear in newly generated ruins. Already-generated books and containers are not rewritten; unopened record caches can use the updated loot tables.
+
+For Minecraft 1.20.1, Forge 47.4.16+. Requires Waystones 14.1.21+, Balm 7.3.44+ and Lithostitched 1.4.11+ on client and server.
+
+Validation: 49 generator tests passed. Release comparison verified unchanged block geometry, placement data and Java classes. No fresh in-game validation is claimed for this content-only update.
+
+Developed with AI assistance. See NOTICE.md for attribution.
+
 # Bons Voyage 1.19.3
 
 First public release. Minecraft 1.20.1, Forge 47.4.16 or newer.

@@ -8,7 +8,7 @@ from pathlib import Path
 import argparse, hashlib, json, os, subprocess, sys, zipfile
 
 ROOT=Path(__file__).resolve().parent
-VERSION='1.19.3'
+VERSION='1.19.4'
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--server',required=True,type=Path);parser.add_argument('--jdk',type=Path)

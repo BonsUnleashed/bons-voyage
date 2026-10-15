@@ -39,7 +39,7 @@ NETHER = dict(NETHER, **d2.NETHER2, **d3.NETHER3)
 END = dict(END, **d2.END2, **d3.END3)
 DEFAULT_GRAND_EXTRA = dict(d3.DEFAULT_GRAND3)
 
-VERSION = "1.19.3"
+VERSION = "1.19.4"
 NS = "waystone_ruins"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STAGE = os.path.join(ROOT, "stage")
@@ -548,7 +548,7 @@ def advancement_json(name, ids, icon, title, desc, frame="task", hidden=False, p
         "parent": parent or "minecraft:adventure/root",
         "display": {"icon": {"item": icon}, "title": {"text": title},
                     "description": {"text": desc}, "frame": frame,
-                    "show_toast": True, "announce_to_chat": True, "hidden": hidden},
+                    "show_toast": True, "announce_to_chat": frame == "challenge", "hidden": hidden},
         "criteria": criteria,
         "requirements": [list(criteria.keys())],
     }
@@ -575,7 +575,7 @@ def advancement_grouped(groups, icon, title, desc, parent, frame="challenge"):
         "parent": parent,
         "display": {"icon": {"item": icon}, "title": {"text": title},
                     "description": {"text": desc}, "frame": frame,
-                    "show_toast": True, "announce_to_chat": True, "hidden": False},
+                    "show_toast": True, "announce_to_chat": frame == "challenge", "hidden": False},
         "criteria": criteria,
         "requirements": requirements,
     }
@@ -782,6 +782,8 @@ def build_template(dname, fn, theme, kind, struct_dir, expect_waystone=True,
         if audit["issues"]:
             raise ValueError(f"{dname}/{theme}: access validation failed: " + "; ".join(audit["issues"]))
     sid = sid or f"{dname}_{theme}"
+    from polish import apply as polish_content
+    polish_content(b)
     size, npal, nblocks = b.emit(os.path.join(struct_dir, f"{sid}.nbt"))
     root = validate_nbt(os.path.join(struct_dir, f"{sid}.nbt"), sid, expect_waystone)
     # emit translates ALL axes to zero, including designs with cellars below
@@ -908,6 +910,8 @@ def main():
         if audit['issues']:
             raise ValueError(f"{row['sid']}: " + '; '.join(audit['issues']))
         sid, theme = row['sid'], row['theme']
+        from polish import apply as polish_content
+        polish_content(b)
         stats = b.emit(os.path.join(struct_dir, sid + '.nbt'))
         root = validate_nbt(os.path.join(struct_dir, sid + '.nbt'), sid, max_size=(80, 48, 80))
         check_spawners(sid, root, row['set'])
@@ -1004,6 +1008,15 @@ def main():
     jw(os.path.join(data, "loot_tables", "chests", "curiosity_cache.json"), curiosity_loot_json())
     jw(os.path.join(data, "loot_tables", "chests", "hidden_treasury.json"), hidden_treasury_json())
     jw(os.path.join(data, "loot_tables", "chests", "waybuilder_hoard.json"), hoard_json())
+    from polish import SCHOOL_SHERDS, COMMON_REPLACEMENTS, school_cache, school_treasury, archaeology_table
+    for school in SCHOOL_SHERDS:
+        jw(os.path.join(data, "loot_tables", "chests", f"curiosity_cache_{school}.json"),
+           school_cache(school))
+        jw(os.path.join(data, "loot_tables", "chests", f"hidden_treasury_{school}.json"),
+           school_treasury(school))
+    for purpose in COMMON_REPLACEMENTS:
+        jw(os.path.join(data, "loot_tables", "archaeology", f"{purpose}.json"),
+           archaeology_table(loot_json(), purpose))
 
     # culture structure tags for the waystone_ruins_names companion mod
     for tag, ids in culture_tag_ids.items():

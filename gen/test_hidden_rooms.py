@@ -7,6 +7,7 @@ from audit_access import WalkGraph, build_case, design_cases
 from core import Build
 from hidden_rooms import HIDDEN_ROOMS, MIN_Y, CACHE_LOOT
 from loot import curiosity_loot_json
+from polish import SCHOOL_SHERDS
 from nbt import read_nbt
 
 
@@ -47,7 +48,8 @@ class HiddenRoomTests(unittest.TestCase):
                         b=build_case(name,fn,theme,kind,folder,seed=seed,hidden=True)
                         closed=WalkGraph(b,ground=2,open_secrets=False)
                         outside_closed=closed.flood(closed.outside())
-                        caches=[p for p,(_,be) in b.blocks.items() if be and be.get('LootTable')==CACHE_LOOT]
+                        cache_tables = {CACHE_LOOT} | {CACHE_LOOT + '_' + s for s in SCHOOL_SHERDS}
+                        caches=[p for p,(_,be) in b.blocks.items() if be and be.get('LootTable') in cache_tables]
                         self.assertEqual(len(caches),1)
                         x,y,z=caches[0]
                         approaches={(x+dx,y,z+dz) for dx,dz in ((1,0),(-1,0),(0,1),(0,-1))}

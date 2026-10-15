@@ -73,6 +73,7 @@ ARCHIVE_REGISTER=written_book('Register of the Way','A keeper of the archive',[
     'Each waystone was raised with two names: the place where it stood, and the traveller who first asked for it. The first names are cut above. The second are kept here.',
     'When a stone falls silent, its second name comes down to these shelves. We read it aloud once, then set it among the others.',
     'The shelves are not full. We leave the space for those still travelling.',
+    'The covered walks kept their offerings beneath the vanished end bay. A measured border still marks the store below.',
 ])
 
 

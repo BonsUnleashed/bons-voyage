@@ -14,6 +14,7 @@ from loot import (HIDDEN_TREASURY, HOARD, curiosity_loot_json,
                   hidden_treasury_json, hoard_json)
 from master import CRYPT_CHEST_LOOT
 from hidden_rooms import CACHE_LOOT
+from polish import SCHOOL_SHERDS, COMMON_REPLACEMENTS, school_cache, school_treasury, archaeology_table
 
 TABLES = {
     "crypt": release.crypt_loot_json(),
@@ -22,7 +23,12 @@ TABLES = {
     "waybuilder_hoard": hoard_json(),
     "archaeology": release.loot_json(),
 }
-TIERS = {CRYPT_CHEST_LOOT, CACHE_LOOT, HIDDEN_TREASURY, HOARD}
+TABLES.update({f'cache_{s}': school_cache(s) for s in SCHOOL_SHERDS})
+TABLES.update({f'treasury_{s}': school_treasury(s) for s in SCHOOL_SHERDS})
+TABLES.update({f'archaeology_{p}': archaeology_table(release.loot_json(), p)
+               for p in COMMON_REPLACEMENTS})
+TIERS = {CRYPT_CHEST_LOOT, CACHE_LOOT, HIDDEN_TREASURY, HOARD} | {CACHE_LOOT + '_' + s for s in SCHOOL_SHERDS}
+TIERS.update(HIDDEN_TREASURY + '_' + s for s in SCHOOL_SHERDS)
 
 
 def entries(table):

@@ -212,15 +212,18 @@ def build_selected(row):
 
 def record_loot(ident):
     from loot import supplies_pool,find_pool
+    from polish import THEME_SCHOOL, school_keepsake
     title,_,story=EXPANSIONS[ident]
     pages=[json.dumps({'text':story},ensure_ascii=False)]
     # SNBT permits quote/backslash escapes, but not JSON's \uXXXX escapes.
     tag='{title:'+json.dumps(title[:32],ensure_ascii=False)+',author:"An unnamed keeper",pages:['+','.join(json.dumps(p,ensure_ascii=False) for p in pages)+']}'
     # v1.17: the keeper's store behind the sealed room holds a real find, not
     # one to three single nuggets.
+    school = THEME_SCHOOL.get(BY_ID[ident]['theme'])
+    keepsake = school_keepsake(school) if school else {'rolls':1,'entries':[{'type':'minecraft:item','name':'minecraft:explorer_pottery_sherd'},{'type':'minecraft:item','name':'minecraft:shelter_pottery_sherd'}]}
     return {'type':'minecraft:chest','pools':[
         {'rolls':1,'entries':[{'type':'minecraft:item','name':'minecraft:written_book','functions':[{'function':'minecraft:set_nbt','tag':tag}]}]},
-        {'rolls':1,'entries':[{'type':'minecraft:item','name':'minecraft:explorer_pottery_sherd'},{'type':'minecraft:item','name':'minecraft:shelter_pottery_sherd'}]},
+        keepsake,
         supplies_pool({'min':2,'max':3}),
         find_pool()]}
 

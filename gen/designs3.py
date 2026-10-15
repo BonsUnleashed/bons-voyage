@@ -289,6 +289,7 @@ def nymphaeum(b):
 MARDUK_TABLET = written_book("Tablet of the Stone Road", "A scribe of the house", [
     "In the house of the god the roads are counted. Each stone that answers is written on clay; each stone that falls silent is written again, and the old tablet broken.",
     "The unbroken tablets are kept below, where the heat cannot crack them. There are more here than there are roads.",
+    "At the merchants' house, the public ledger ended above the floor. The unclaimed goods were counted beneath its fitted stone.",
 ])
 
 

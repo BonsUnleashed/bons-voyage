@@ -1,6 +1,6 @@
 # Bons Voyage source
 
-Complete source of the combined Forge 1.20.1 mod, release 1.19.3. The Python
+Complete source of the combined Forge 1.20.1 mod, release 1.19.4. The Python
 generator produces the structures, loot, tags and advancements; the Java class
 integrates school-based naming with Waystones.
 
@@ -16,8 +16,8 @@ included here.
 python build_release.py --server "/path/to/forge-server" --jdk "/path/to/jdk"
 ```
 
-The output is `dist/waystone_ruins-1.19.3.jar`. The generator's intermediate
-`waystone_ruins-1.19.3-data.jar` contains data only; ship the combined jar.
+The output is `dist/waystone_ruins-1.19.4.jar`. The generator's intermediate
+`waystone_ruins-1.19.4-data.jar` contains data only; ship the combined jar.
 Compilation uses the Forge server's installed SRG libraries. With the recorded JDK
 and Forge versions the build is byte-identical to the released file.
 
@@ -49,6 +49,13 @@ radius and both height filters; grids of radius 12 and more sample every 5 to 8 
 every 4 (the divisor of the radius nearest to 6, at most radius / 2, `site_step` in `gen/build.py`),
 so each site costs fewer terrain-height queries; radius-8 grids keep 4. Every grid still covers its
 corners, edge midpoints, centre and a ring inside the footprint.
+
+Content polish (1.19.4): school-specific pottery keepsakes in existing curiosity,
+hidden treasury and record caches; three existing books gain cross-site hints; six existing brushable
+positions use archive, storehouse, ceremonial or shelter finds. Common entries are
+exchanged at equal weights, preserving valuable-find probabilities. Ordinary task
+and goal discoveries retain toasts without chat announcements; challenges retain
+both. No blocks, placement settings, structure IDs or runtime classes change.
 
 ## License and attribution
 

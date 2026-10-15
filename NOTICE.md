@@ -28,8 +28,3 @@ Screenshots and captured footage show Minecraft running the mod. Any separately
 provided promotional illustration has its own provenance and is not evidence of
 in-game appearance. The old generated promotional cover is not included in the
 public JAR or source archive.
-
-The trailer's music is "Legionnaire (Original)" by Scott Buckley, released under the
-Creative Commons Attribution 4.0 International license (www.scottbuckley.com.au).
-The required credit appears on the front page, on the trailer's end card and in
-media/provenance.json. The track is not part of the mod or its source archive.
