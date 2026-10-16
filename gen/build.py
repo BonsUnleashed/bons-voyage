@@ -39,7 +39,7 @@ NETHER = dict(NETHER, **d2.NETHER2, **d3.NETHER3)
 END = dict(END, **d2.END2, **d3.END3)
 DEFAULT_GRAND_EXTRA = dict(d3.DEFAULT_GRAND3)
 
-VERSION = "1.19.4"
+VERSION = "1.20.0"
 NS = "waystone_ruins"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STAGE = os.path.join(ROOT, "stage")
@@ -74,45 +74,48 @@ DESIGN_SCHOOL = {d: s for s, ds in SCHOOL_DESIGNS.items() for d in ds}
 
 # name: designs, theme, spacing, separation, salt, exclusion, kind, cave height range
 # v1.8: spacing cut ~30% across the board per Justin ("make these more common")
+# 1.20.0 (Justin 2026-10-16: "change the default spacing to reflect our current pack's setting"): every set now
+# defaults to the spacing the pack has run through Structurify since 2026-09-27 (1.19.4 defaults in brackets).
+# Config worldgen.spacing_multiplier scales all of them; Structurify overrides still replace them per set.
 SETS = {
     # wine_villa stays registered (worlds reference it) but left generation
     # at Justin's request (v1.16, 2026-09-18)
-    "small_default":       dict(designs=SMALL_WITH_BARROW, theme="default", spacing=20, sep=10, salt=918273645, excl=("minecraft:villages", 4), kind="surface", extras=[(GREEK_SMALL, "greek")], exclude_from_set=["wine_villa"]),
-    "small_mossy":         dict(designs=SMALL, theme="mossy",   spacing=20, sep=10, salt=918273646, excl=("minecraft:villages", 4), kind="surface", extras=[(MAYAN_SMALL, "mayan")]),
-    "small_sandy":         dict(designs=SMALL, theme="sandy",   spacing=20, sep=10, salt=918273647, excl=("minecraft:villages", 4), kind="surface", extras=[(EGYPT_SMALL, "egyptian")]),
-    "small_frozen":        dict(designs=SMALL_WITH_BARROW, theme="frozen",  spacing=20, sep=10, salt=918273648, excl=("minecraft:villages", 4), kind="surface", extras=[(VIKING_SMALL, "viking")]),
-    "small_red":           dict(designs=SMALL, theme="red",     spacing=20, sep=10, salt=918273649, excl=("minecraft:villages", 4), kind="surface", extras=[(BABYLON_SMALL, "babylon")]),
-    "small_cherry":        dict(designs=SMALL, theme="cherry",  spacing=20, sep=10, salt=918273650, excl=("minecraft:villages", 4), kind="surface"),
+    "small_default":       dict(designs=SMALL_WITH_BARROW, theme="default", spacing=17, sep=8, salt=918273645, excl=("minecraft:villages", 4), kind="surface", extras=[(GREEK_SMALL, "greek")], exclude_from_set=["wine_villa"]),   # [20/10]
+    "small_mossy":         dict(designs=SMALL, theme="mossy",   spacing=17, sep=8, salt=918273646, excl=("minecraft:villages", 4), kind="surface", extras=[(MAYAN_SMALL, "mayan")]),
+    "small_sandy":         dict(designs=SMALL, theme="sandy",   spacing=17, sep=8, salt=918273647, excl=("minecraft:villages", 4), kind="surface", extras=[(EGYPT_SMALL, "egyptian")]),
+    "small_frozen":        dict(designs=SMALL_WITH_BARROW, theme="frozen",  spacing=17, sep=8, salt=918273648, excl=("minecraft:villages", 4), kind="surface", extras=[(VIKING_SMALL, "viking")]),
+    "small_red":           dict(designs=SMALL, theme="red",     spacing=17, sep=8, salt=918273649, excl=("minecraft:villages", 4), kind="surface", extras=[(BABYLON_SMALL, "babylon")]),
+    "small_cherry":        dict(designs=SMALL, theme="cherry",  spacing=17, sep=8, salt=918273650, excl=("minecraft:villages", 4), kind="surface"),
     # waybuilder_workshop stays registered (worlds reference it) but left generation
     # at Justin's request (v1.19.2, 2026-10-08: "it is bad")
-    "grand_default":       dict(designs=GRAND, theme="default", spacing=32, sep=16, salt=564738291, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(GREEK_GRAND, "greek"), (DEFAULT_GRAND_EXTRA, "default")], exclude_from_set=["waybuilder_workshop"]),
-    "grand_mossy":         dict(designs=GRAND, theme="mossy",   spacing=32, sep=16, salt=564738292, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(MAYAN_GRAND, "mayan")]),
-    "grand_sandy":         dict(designs=GRAND, theme="sandy",   spacing=32, sep=16, salt=564738293, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(EGYPT_GRAND, "egyptian")]),
+    "grand_default":       dict(designs=GRAND, theme="default", spacing=27, sep=14, salt=564738291, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(GREEK_GRAND, "greek"), (DEFAULT_GRAND_EXTRA, "default")], exclude_from_set=["waybuilder_workshop"]),   # [32/16]
+    "grand_mossy":         dict(designs=GRAND, theme="mossy",   spacing=27, sep=14, salt=564738292, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(MAYAN_GRAND, "mayan")]),
+    "grand_sandy":         dict(designs=GRAND, theme="sandy",   spacing=27, sep=14, salt=564738293, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(EGYPT_GRAND, "egyptian")]),
     # drakkar_shed likewise retained but out of generation (v1.16)
-    "grand_frozen":        dict(designs=GRAND, theme="frozen",  spacing=32, sep=16, salt=564738294, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(VIKING_GRAND, "viking")], exclude_from_set=["drakkar_shed"]),
+    "grand_frozen":        dict(designs=GRAND, theme="frozen",  spacing=27, sep=14, salt=564738294, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(VIKING_GRAND, "viking")], exclude_from_set=["drakkar_shed"]),
     # step_pyramid stays registered (existing worlds reference it) but no longer
     # spawns in badlands — the ziggurat owns that silhouette there
-    "grand_red":           dict(designs=GRAND, theme="red",     spacing=32, sep=16, salt=564738295, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(BABYLON_GRAND, "babylon")], exclude_from_set=["step_pyramid"]),
-    "grand_cherry":        dict(designs=CHERRY_GRAND, theme="cherry", spacing=32, sep=16, salt=564738296, excl=("minecraft:villages", 6), kind="surface", size=2),
-    "sunken":              dict(designs=SUNKEN, theme="default", spacing=24, sep=12, salt=675849305, excl=("minecraft:villages", 4), kind="sunken"),
-    "underground":         dict(designs=UNDER, theme="deep",      spacing=26, sep=13, salt=192837465, excl=None, kind="cave", heights=(-32, 32)),
-    "underground_lush":    dict(designs=UNDER, theme="lush",      spacing=26, sep=13, salt=192837466, excl=None, kind="cave", heights=(-32, 32)),
-    "underground_dripstone": dict(designs=UNDER, theme="dripstone", spacing=26, sep=13, salt=192837467, excl=None, kind="cave", heights=(-32, 32)),
-    "underground_sculk":   dict(designs=UNDER, theme="sculk",     spacing=26, sep=13, salt=192837468, excl=("minecraft:ancient_cities", 2), kind="cave", heights=(-48, 8)),
-    "nether":              dict(designs=NETHER, theme="nether",  spacing=26, sep=13, salt=675849302, excl=None, kind="cave", heights=(40, 75)),
-    "end":                 dict(designs=END, theme="end",        spacing=34, sep=17, salt=675849303, excl=None, kind="surface"),
-    "drowned":             dict(designs=DROWNED, theme="drowned", spacing=18, sep=9, salt=675849304, excl=None, kind="water"),
+    "grand_red":           dict(designs=GRAND, theme="red",     spacing=27, sep=14, salt=564738295, excl=("minecraft:villages", 6), kind="surface", size=2, extras=[(BABYLON_GRAND, "babylon")], exclude_from_set=["step_pyramid"]),
+    "grand_cherry":        dict(designs=CHERRY_GRAND, theme="cherry", spacing=27, sep=14, salt=564738296, excl=("minecraft:villages", 6), kind="surface", size=2),
+    "sunken":              dict(designs=SUNKEN, theme="default", spacing=20, sep=10, salt=675849305, excl=("minecraft:villages", 4), kind="sunken"),   # [24/12]
+    "underground":         dict(designs=UNDER, theme="deep",      spacing=22, sep=11, salt=192837465, excl=None, kind="cave", heights=(-32, 32)),   # [26/13]
+    "underground_lush":    dict(designs=UNDER, theme="lush",      spacing=22, sep=11, salt=192837466, excl=None, kind="cave", heights=(-32, 32)),
+    "underground_dripstone": dict(designs=UNDER, theme="dripstone", spacing=22, sep=11, salt=192837467, excl=None, kind="cave", heights=(-32, 32)),
+    "underground_sculk":   dict(designs=UNDER, theme="sculk",     spacing=22, sep=11, salt=192837468, excl=("minecraft:ancient_cities", 2), kind="cave", heights=(-48, 8)),
+    "nether":              dict(designs=NETHER, theme="nether",  spacing=22, sep=11, salt=675849302, excl=None, kind="cave", heights=(40, 75)),   # [26/13]
+    "end":                 dict(designs=END, theme="end",        spacing=29, sep=14, salt=675849303, excl=None, kind="surface"),   # [34/17]
+    "drowned":             dict(designs=DROWNED, theme="drowned", spacing=15, sep=7, salt=675849304, excl=None, kind="water"),   # [18/9]
     # v1.9 mega-dungeons: rare pilgrimage finds, one design per set. Only these
     # and the origin may hold a monster spawner (see SPAWNER_SETS).
-    "mega_sandy":          dict(designs=d4.EGYPT_GRAND4, theme="egyptian", spacing=64, sep=32, salt=777100001, excl=("minecraft:villages", 4), kind="surface"),
-    "mega_temperate":      dict(designs=d4.GREEK_GRAND4, theme="greek",    spacing=64, sep=32, salt=777100002, excl=("minecraft:villages", 4), kind="surface"),
-    "mega_red":            dict(designs=d4.BABYLON_GRAND4, theme="babylon", spacing=64, sep=32, salt=777100003, excl=("minecraft:villages", 4), kind="surface"),
-    "mega_frozen":         dict(designs=d4.VIKING_GRAND4, theme="viking",  spacing=64, sep=32, salt=777100004, excl=("minecraft:villages", 4), kind="surface"),
-    "mega_mossy":          dict(designs=d4.MAYAN_GRAND4, theme="mayan",    spacing=64, sep=32, salt=777100005, excl=("minecraft:villages", 4), kind="surface"),
-    "mega_nether":         dict(designs=d4.NETHER4, theme="nether",        spacing=64, sep=32, salt=777100006, excl=None, kind="cave", heights=(40, 70)),
-    "mega_end":            dict(designs=d4.END4, theme="end",              spacing=64, sep=32, salt=777100007, excl=None, kind="surface"),
-    "origin":              dict(designs={"the_first_waystone": d4.the_first_waystone}, theme="default", spacing=120, sep=60, salt=777100008, excl=("minecraft:villages", 6), kind="surface"),
-    "undercroft":          dict(designs={"smugglers_undercroft": d4.smugglers_undercroft}, theme="default", spacing=40, sep=20, salt=777100009, excl=("minecraft:villages", 4), kind="surface"),
+    "mega_sandy":          dict(designs=d4.EGYPT_GRAND4, theme="egyptian", spacing=55, sep=28, salt=777100001, excl=("minecraft:villages", 4), kind="surface"),   # [64/32]
+    "mega_temperate":      dict(designs=d4.GREEK_GRAND4, theme="greek",    spacing=55, sep=28, salt=777100002, excl=("minecraft:villages", 4), kind="surface"),
+    "mega_red":            dict(designs=d4.BABYLON_GRAND4, theme="babylon", spacing=55, sep=28, salt=777100003, excl=("minecraft:villages", 4), kind="surface"),
+    "mega_frozen":         dict(designs=d4.VIKING_GRAND4, theme="viking",  spacing=55, sep=28, salt=777100004, excl=("minecraft:villages", 4), kind="surface"),
+    "mega_mossy":          dict(designs=d4.MAYAN_GRAND4, theme="mayan",    spacing=55, sep=28, salt=777100005, excl=("minecraft:villages", 4), kind="surface"),
+    "mega_nether":         dict(designs=d4.NETHER4, theme="nether",        spacing=55, sep=28, salt=777100006, excl=None, kind="cave", heights=(40, 70)),
+    "mega_end":            dict(designs=d4.END4, theme="end",              spacing=55, sep=28, salt=777100007, excl=None, kind="surface"),
+    "origin":              dict(designs={"the_first_waystone": d4.the_first_waystone}, theme="default", spacing=103, sep=51, salt=777100008, excl=("minecraft:villages", 6), kind="surface"),   # [120/60]
+    "undercroft":          dict(designs={"smugglers_undercroft": d4.smugglers_undercroft}, theme="default", spacing=34, sep=17, salt=777100009, excl=("minecraft:villages", 4), kind="surface"),   # [40/20]
 }
 
 # v1.17 (Justin, 2026-09-29): "only the biggest structures should have
@@ -267,6 +270,17 @@ def state_obj(state):
     return o
 
 
+# 1.20.0: the gate of the optional waystone chest (waystone_chest.py, java .../chests/WaystoneChestProcessor) runs
+# first in every waystone template's processor list. Pieces that used minecraft:empty get a list holding only it.
+CHEST_GATE = {"processor_type": f"{NS}:waystone_chest"}
+CHEST_GATE_LIST = f"{NS}:waystone_chest"
+CHEST_MANIFEST = {}     # sid -> chest/waystone cells in template coordinates, for tests and rigs
+
+
+def gated(processor_list):
+    return {"processors": [CHEST_GATE] + processor_list["processors"]}
+
+
 def processor_json(theme):
     rules = []
     for block, outs in PROCESSORS[theme]:
@@ -361,7 +375,7 @@ def pool_json(sids, theme, pristine_sid=None, hidden_sid=None):
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "location": f"{NS}:{pristine_sid}",
-                "processors": "minecraft:empty",
+                "processors": CHEST_GATE_LIST,
                 "projection": "rigid",
             },
         })
@@ -745,6 +759,40 @@ def make_logo(path):
         f.write(png)
 
 
+def add_waystone_chest(b, kind, theme, ground, audit, surface=None):
+    """1.20.0: stone halves origin=dungeon + the gated waystone chest (waystone_chest.py). Runs after every RNG step
+    and after the content polish, so the rest of the template stays byte-identical; the access audit then runs
+    again with the chest in place, as it would stand with the config switched on."""
+    from waystone_chest import retag_origin, place
+    retag_origin(b)
+    place(b, kind, theme, ground)
+    if kind == "surface" and surface is None:          # build_template validated these before the chest
+        from archaeology import validate_archaeology
+        validate_archaeology(b, ground)
+    if audit:
+        from audit_access import audit_build
+        result = audit_build(b, ground=ground, surface=kind == "surface" if surface is None else surface)
+        if result["issues"]:
+            raise ValueError(f"{b.name}/{b.theme_name}: access validation failed with the waystone chest: "
+                             + "; ".join(result["issues"]))
+
+
+def note_waystone_chest(sid, b, kind, theme):
+    from waystone_chest import EXEMPT, find_waystone, realm
+    ox, oy, oz = b.emitted_origin
+    (wx, wy, wz), facing = find_waystone(b)
+    entry = {"waystone": [wx - ox, wy - oy, wz - oz], "facing": facing, "realm": realm(kind, theme)}
+    if b.waystone_chest is None:
+        entry["chest"] = None
+        entry["exempt"] = EXEMPT.get(b.name, "no chest placed")
+    else:
+        cx, cy, cz = b.waystone_chest
+        entry["chest"] = [cx - ox, cy - oy, cz - oz]
+        entry["was"] = b.waystone_chest_restore
+        entry["protected_cell"] = b.waystone_chest in b.protected
+    CHEST_MANIFEST[sid] = entry
+
+
 def build_template(dname, fn, theme, kind, struct_dir, expect_waystone=True,
                    seed=0, sid=None, pristine=False, hidden=False):
     b = Build(dname, theme, seed=seed, pristine=pristine)
@@ -784,7 +832,12 @@ def build_template(dname, fn, theme, kind, struct_dir, expect_waystone=True,
     sid = sid or f"{dname}_{theme}"
     from polish import apply as polish_content
     polish_content(b)
+    if expect_waystone:
+        add_waystone_chest(b, kind, theme, ground,
+                           audit=kind == "surface" or (kind == "cave" and getattr(b, "rooms", ())))
     size, npal, nblocks = b.emit(os.path.join(struct_dir, f"{sid}.nbt"))
+    if expect_waystone:
+        note_waystone_chest(sid, b, kind, theme)
     root = validate_nbt(os.path.join(struct_dir, f"{sid}.nbt"), sid, expect_waystone)
     # emit translates ALL axes to zero, including designs with cellars below
     # y=0 and deep designs whose lowest room begins at y=2 or y=3.
@@ -912,7 +965,9 @@ def main():
         sid, theme = row['sid'], row['theme']
         from polish import apply as polish_content
         polish_content(b)
+        add_waystone_chest(b, SETS[row['set']]['kind'], theme, 2, audit=True, surface=True)
         stats = b.emit(os.path.join(struct_dir, sid + '.nbt'))
+        note_waystone_chest(sid, b, SETS[row['set']]['kind'], theme)
         root = validate_nbt(os.path.join(struct_dir, sid + '.nbt'), sid, max_size=(80, 48, 80))
         check_spawners(sid, root, row['set'])
         ground = 2 - b.emitted_origin[1]
@@ -930,11 +985,11 @@ def main():
         else:
             modifier = site_modifier(sid, ground, root['size'])
         jw(os.path.join(data, 'worldgen', 'structure', sid+'.json'), structure)
-        # All deterioration is authored. No random processor can erase a clue.
+        # All deterioration is authored. No random processor can erase a clue. (1.20.0: only the chest gate runs.)
         jw(os.path.join(data, 'worldgen', 'template_pool', sid+'.json'), {
             'fallback':'minecraft:empty', 'elements':[{'weight':1,'element':{
                 'element_type':'minecraft:single_pool_element','location':f'{NS}:{sid}',
-                'processors':'minecraft:empty','projection':'rigid'}}]})
+                'processors':CHEST_GATE_LIST,'projection':'rigid'}}]})
         jw(os.path.join(data, 'lithostitched', 'worldgen_modifier', sid+'_site.json'), modifier)
         set_path = os.path.join(data, 'worldgen', 'structure_set', row['set']+'.json')
         with open(set_path, encoding='utf-8') as f:
@@ -954,7 +1009,8 @@ def main():
             jw(os.path.join(data,'loot_tables','chests',f"selected_{row['id']}_records.json"),record_loot(row['id']))
         selected_manifest.append(dict(row, emittedOrigin=b.emitted_origin, emittedSize=root['size'],
                                       groundLevel=ground, addedRooms=b.added_rooms,
-                                      additionalSecrets=b.additional_secrets, caches=b.cache_positions))
+                                      additionalSecrets=b.additional_secrets, caches=b.cache_positions,
+                                      waystoneChest=b.waystone_chest))
     jw(os.path.join(ROOT, 'selected_release.json'), {'version':VERSION,'structures':selected_manifest})
 
     # 1.19.1 (Justin 2026-10-06: eight Bons Voyage waystones in one field, some side by side): the sets above
@@ -986,7 +1042,8 @@ def main():
 
     for theme in sorted(PROCESSORS):
         jw(os.path.join(data, "worldgen", "processor_list", f"weathering_{theme}.json"),
-           processor_json(theme))
+           gated(processor_json(theme)))
+    jw(os.path.join(data, "worldgen", "processor_list", "waystone_chest.json"), {"processors": [CHEST_GATE]})
 
     for key, values in BIOME_TAGS.items():
         body = {"replace": False, "values": values}
@@ -1017,6 +1074,11 @@ def main():
     for purpose in COMMON_REPLACEMENTS:
         jw(os.path.join(data, "loot_tables", "archaeology", f"{purpose}.json"),
            archaeology_table(loot_json(), purpose))
+    from waystone_chest import REALMS, loot_json as waystone_chest_loot
+    for realm_name in REALMS:
+        jw(os.path.join(data, "loot_tables", "chests", "waystone_chest", f"{realm_name}.json"),
+           waystone_chest_loot(realm_name))
+    jw(os.path.join(ROOT, "waystone_chests.json"), {"version": VERSION, "templates": dict(sorted(CHEST_MANIFEST.items()))})
 
     # culture structure tags for the waystone_ruins_names companion mod
     for tag, ids in culture_tag_ids.items():

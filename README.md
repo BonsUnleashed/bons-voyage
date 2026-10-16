@@ -8,7 +8,7 @@ The Waybuilders are gone. Their waystones still work.
 
 ![A sandstone step pyramid on a beach at sunset, the sun behind its gateway and the waystone inside it](media/step-pyramid-sunset.webp)
 
-**[Download 1.19.4](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.19.4)** for Minecraft 1.20.1 Forge · [Changelog](CHANGELOG.md) · [Build from source](BUILDING.md) · [Watch the trailer](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-trailer.mp4) (103 s, in a 500-mod pack with shaders)
+**[Download 1.20.0](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.20.0)** for Minecraft 1.20.1 Forge · [Changelog](CHANGELOG.md) · [Build from source](BUILDING.md) · [Watch the trailer](https://github.com/BonsUnleashed/bons-voyage/releases/download/v1.19.3/bons-voyage-trailer.mp4) (103 s, in a 500-mod pack with shaders)
 
 Requires Waystones, Balm and Lithostitched. Free, MIT licensed, client and server. Also on CurseForge and Modrinth.
 
@@ -19,7 +19,7 @@ on the sea floor, in the Nether and in the End.
 
 **Bring a brush. Look twice.**
 
-Get it: [GitHub](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.19.4) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bons-voyage) · [Modrinth](https://modrinth.com/mod/bons-voyage).
+Get it: [GitHub](https://github.com/BonsUnleashed/bons-voyage/releases/tag/v1.20.0) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/bons-voyage) · [Modrinth](https://modrinth.com/mod/bons-voyage).
 
 ## What you will find
 
@@ -82,9 +82,14 @@ companion is included now, so do not install it separately.
 - **One ruin per site.** Every ruin claims the ground around it, and where two would
   meet the smaller gives way. In testing no two surface ruins stood closer than about
   150 blocks.
-- **Rarity is yours to tune.** Each of the 29 structure sets has ordinary spacing and
-  separation values. A datapack or a structure tuning mod such as Structurify can
-  change them.
+- **Waystones stay put.** Survival players cannot break the waystone of a ruin, so the
+  stones you find are still there for the next traveller. Creative players can.
+- **A chest at every waystone, if you want one.** Off by default; switch it on in
+  `config/bons_voyage-common.toml`. The loot comes from vanilla chest tables, so items
+  other mods add to them can turn up too.
+- **Rarity is yours to tune.** `spacing_multiplier` in `config/bons_voyage-common.toml`
+  spreads every ruin out or brings them closer. Each of the 29 structure sets also has
+  ordinary spacing and separation values that a datapack or Structurify can change.
 - **Modded biomes are covered.** The biome lists name more than 400 biomes from over
   twenty biome mods, including Terralith, Biomes O' Plenty, Regions Unexplored,
   Oh The Biomes We've Gone, Atmospheric and Better End, with Forge biome tags as the fallback.

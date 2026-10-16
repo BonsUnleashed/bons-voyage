@@ -1,6 +1,6 @@
 # Bons Voyage source
 
-Complete source of the combined Forge 1.20.1 mod, release 1.19.4. The Python
+Complete source of the combined Forge 1.20.1 mod, release 1.20.0. The Python
 generator produces the structures, loot, tags and advancements; the Java class
 integrates school-based naming with Waystones.
 
@@ -16,8 +16,8 @@ included here.
 python build_release.py --server "/path/to/forge-server" --jdk "/path/to/jdk"
 ```
 
-The output is `dist/waystone_ruins-1.19.4.jar`. The generator's intermediate
-`waystone_ruins-1.19.4-data.jar` contains data only; ship the combined jar.
+The output is `dist/waystone_ruins-1.20.0.jar`. The generator's intermediate
+`waystone_ruins-1.20.0-data.jar` contains data only; ship the combined jar.
 Compilation uses the Forge server's installed SRG libraries. With the recorded JDK
 and Forge versions the build is byte-identical to the released file.
 
@@ -56,6 +56,27 @@ positions use archive, storehouse, ceremonial or shelter finds. Common entries a
 exchanged at equal weights, preserving valuable-find probabilities. Ordinary task
 and goal discoveries retain toasts without chat announcements; challenges retain
 both. No blocks, placement settings, structure IDs or runtime classes change.
+
+Settings, waystone chests and protected stones (1.20.0):
+
+- `config/bons_voyage-common.toml` (read before a world loads; new chunks only):
+  `worldgen.spacing_multiplier` (default 1.0, range 0.25 to 4.0) scales every ruin set's spacing, separation and
+  claim radius when the structure sets are decoded, so Structurify and datapacks still act on top;
+  `waystone_chests.enabled` (default false) and one loot-table list per realm (`surface`, `underground`, `water`,
+  `nether`, `end`; vanilla chest tables by default, so items other mods add to them can appear; an empty list uses
+  the mod's own `waystone_ruins:chests/waystone_chest/<realm>` table).
+- `serverconfig/bons_voyage-server.toml` (per world, synced to clients): `waystones.unbreakable` (default true).
+- The default spacing of every set is now the spacing the author's own pack runs (small 17/8, grand 27/14, sunken
+  20/10, crypts and Nether 22/11, End 29/14, river 15/7, great dungeons 55/28, origin 103/51, undercroft 34/17).
+- Every waystone template carries one chest cell beside its stone, chosen by `gen/waystone_chest.py` (never in the
+  column a teleporting player lands in, never in a redesigned stone's clear dais, never cutting a route; 361 of 362
+  templates, the sacbe gate excepted). The processor `waystone_ruins:waystone_chest`, first in each of those
+  templates' processor lists, returns the cell exactly as it was before while the chests are off (air, the recorded
+  decor block, or no block at all), and otherwise picks the chest's loot table from the configured list.
+- Stones generate with `origin=dungeon` (still "generated" for Waystones, so naming on first use is unchanged). That
+  block state reaches the client, so client and server both refuse a survival player's dig. Stones of ruins
+  generated before 1.20.0 (`origin=wilderness`) are protected on the server when they stand inside a ruin. Creative
+  players can still break them; player-placed stones are never protected.
 
 ## License and attribution
 

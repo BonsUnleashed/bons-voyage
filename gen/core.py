@@ -419,14 +419,14 @@ class Build:
             self.set(x, y0 + height, z, cap)
 
     def waystone(self, x, y, z, facing="north"):
-        # origin=wilderness makes wasGenerated() true, so Waystones assigns a
-        # generated name on first activation — origin=unknown (the default when
-        # the property is omitted) silently skips naming. Blockstate property,
-        # NOT block entity NBT.
+        # A generated origin (village, wilderness or dungeon) makes wasGenerated() true, so Waystones assigns a
+        # generated name on first activation — origin=unknown (the default when the property is omitted) silently
+        # skips naming. Blockstate property, NOT block entity NBT. 1.20.0: dungeon instead of wilderness, the mark
+        # by which client and server agree the stone cannot be broken (waystone_chest.retag_origin).
         ws = self.theme["waystone"]
-        self.set(x, y, z, f"{ws}[half=lower,facing={facing},origin=wilderness,waterlogged=false]",
+        self.set(x, y, z, f"{ws}[half=lower,facing={facing},origin=dungeon,waterlogged=false]",
                  be=dict(WAYSTONE_BE), protect=True)
-        self.set(x, y + 1, z, f"{ws}[half=upper,facing={facing},origin=wilderness,waterlogged=false]",
+        self.set(x, y + 1, z, f"{ws}[half=upper,facing={facing},origin=dungeon,waterlogged=false]",
                  be=dict(WAYSTONE_BE), protect=True)
         # ensure headroom above the waystone; keep its supporting block too
         self.set(x, y + 2, z, "minecraft:air", protect=True)

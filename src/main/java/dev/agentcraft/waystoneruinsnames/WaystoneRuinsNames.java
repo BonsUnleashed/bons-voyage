@@ -59,6 +59,7 @@ public class WaystoneRuinsNames {
     private final Random random = new Random();
 
     public WaystoneRuinsNames() {
+        dev.agentcraft.waystoneruins.VoyageConfig.register();
         register("school_egyptian", EGYPTIAN);
         register("school_greek", GREEK);
         register("school_babylon", BABYLONIAN);

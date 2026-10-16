@@ -97,6 +97,11 @@ public final class Claims {
             Map<String, Integer> sizes = new java.util.TreeMap<>(groupSizes(ctx.state));
             org.apache.logging.log4j.LogManager.getLogger("Bons Voyage").info(
                     "Bons Voyage placement claims active: {} claimed structure sets, groups {}", ctx.members.size(), sizes);
+            double scale = dev.agentcraft.waystoneruins.VoyageConfig.spacingMultiplier();
+            if (scale != 1.0) {
+                org.apache.logging.log4j.LogManager.getLogger("Bons Voyage").info(
+                        "Bons Voyage spacing multiplier {}: spacing, separation and claim radius scaled", scale);
+            }
         }
     }
 
@@ -116,8 +121,8 @@ public final class Claims {
         Ctx ctx = CONTEXTS.get(state);
         if (ctx == null) return false;                       // not a server level's own generator state
         Member me = ctx.byPlacement.get(self);
-        if (me == null || me.claim().radius() <= 0) return false;
-        int r = me.claim().radius();
+        if (me == null || me.placement().claimRadius() <= 0) return false;
+        int r = me.placement().claimRadius();
         long r2 = (long) r * r;
         for (Member m : ctx.members) {
             if (m == me || !m.claim().group().equals(me.claim().group()) || !outranks(m, me)) continue;

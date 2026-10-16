@@ -41,9 +41,12 @@ def min_rolls(pool):
 
 
 def containers(b):
-    """Loot containers (chests, barrels) by position; brushable blocks excluded."""
+    """Loot containers (chests, barrels) by position; brushable blocks and the optional 1.20.0 waystone chest
+    (off by default, see test_waystone_chest.py) excluded."""
+    from waystone_chest import MARKER
     return {p: be["LootTable"] for p, (state, be) in b.blocks.items()
-            if be and "LootTable" in be and not state.startswith("minecraft:suspicious")}
+            if be and "LootTable" in be and not state.startswith("minecraft:suspicious")
+            and not be["LootTable"].startswith(MARKER)}
 
 
 class SpawnerPolicyTests(unittest.TestCase):

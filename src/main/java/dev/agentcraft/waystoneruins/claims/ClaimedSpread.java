@@ -3,6 +3,7 @@ package dev.agentcraft.waystoneruins.claims;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.agentcraft.waystoneruins.VoyageConfig;
 import java.util.Optional;
 import net.minecraft.core.Vec3i;
 import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
@@ -17,6 +18,10 @@ import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement
  * (candidate chunk to candidate chunk). Ruins of different sets therefore never share a site, while every set keeps
  * its own grid, spacing (Structurify overrides still apply: spacing(), separation() and getPotentialStructureChunk are
  * inherited), exclusion zone and weights. See {@link Claims}.
+ *
+ * 1.20.0: config worldgen.spacing_multiplier scales spacing, separation and the claim radius here, once, when the set
+ * is decoded. The scaled values go into the inherited fields, so Structurify's hooks still act on top of them (its
+ * per-set overrides replace them, its global modifier multiplies them). The codec keeps writing the authored values.
  *
  * Minecraft is referenced by SRG name (production mappings, Forge 1.20.1):
  *   m_227041_ StructurePlacement.placementCodec   m_255071_ StructurePlacement.isStructureChunk
@@ -39,27 +44,63 @@ public class ClaimedSpread extends RandomSpreadStructurePlacement {
     // Codec (e.g. after Codec#comapFlatMap) makes it look for a separate "value" object ("Not a JSON object: null").
     public static final Codec<ClaimedSpread> CODEC = RecordCodecBuilder.<ClaimedSpread>mapCodec(i -> m_227041_(i)
             .and(i.group(
-                    Codec.intRange(0, 4096).fieldOf("spacing").forGetter(RandomSpreadStructurePlacement::m_205003_),
-                    Codec.intRange(0, 4096).fieldOf("separation").forGetter(RandomSpreadStructurePlacement::m_205004_),
+                    Codec.intRange(0, 4096).fieldOf("spacing").forGetter(ClaimedSpread::authoredSpacing),
+                    Codec.intRange(0, 4096).fieldOf("separation").forGetter(ClaimedSpread::authoredSeparation),
                     Claim.CODEC.fieldOf("claim").forGetter(ClaimedSpread::claim)))
             .apply(i, ClaimedSpread::new))
-            .flatXmap(c -> c.m_205003_() <= c.m_205004_()
+            .flatXmap(c -> c.authoredSpacing() <= c.authoredSeparation()
                     ? DataResult.<ClaimedSpread>error(() -> "Spacing has to be larger than separation")
                     : DataResult.success(c), DataResult::success)
             .codec();
 
     private final Claim claim;
+    private final int authoredSpacing;
+    private final int authoredSeparation;
+    private final int claimRadius;
 
     public ClaimedSpread(Vec3i locateOffset, StructurePlacement.FrequencyReductionMethod frequencyReductionMethod,
                          float frequency, int salt, Optional<StructurePlacement.ExclusionZone> exclusionZone,
                          int spacing, int separation, Claim claim) {
-        super(locateOffset, frequencyReductionMethod, frequency, salt, exclusionZone, spacing, separation,
-                RandomSpreadType.LINEAR);
+        this(locateOffset, frequencyReductionMethod, frequency, salt, exclusionZone, spacing, separation, claim,
+                VoyageConfig.spacingMultiplier());
+    }
+
+    private ClaimedSpread(Vec3i locateOffset, StructurePlacement.FrequencyReductionMethod frequencyReductionMethod,
+                          float frequency, int salt, Optional<StructurePlacement.ExclusionZone> exclusionZone,
+                          int spacing, int separation, Claim claim, double scale) {
+        super(locateOffset, frequencyReductionMethod, frequency, salt, exclusionZone, scaledSpacing(spacing, scale),
+                scaledSeparation(spacing, separation, scale), RandomSpreadType.LINEAR);
         this.claim = claim;
+        this.authoredSpacing = spacing;
+        this.authoredSeparation = separation;
+        this.claimRadius = Math.min(64, (int) Math.round(claim.radius() * scale));
+    }
+
+    private static int scaledSpacing(int spacing, double scale) {
+        return scale == 1.0 ? spacing : Math.max(2, (int) Math.round(spacing * scale));
+    }
+
+    /** Always at least one below the scaled spacing: random_spread draws an offset in [0, spacing - separation). */
+    private static int scaledSeparation(int spacing, int separation, double scale) {
+        if (scale == 1.0) return separation;
+        return Math.max(0, Math.min(scaledSpacing(spacing, scale) - 1, (int) Math.round(separation * scale)));
     }
 
     public Claim claim() {
         return claim;
+    }
+
+    public int authoredSpacing() {
+        return authoredSpacing;
+    }
+
+    public int authoredSeparation() {
+        return authoredSeparation;
+    }
+
+    /** The claim radius in chunks after worldgen.spacing_multiplier. */
+    public int claimRadius() {
+        return claimRadius;
     }
 
     @Override
